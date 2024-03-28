@@ -4,7 +4,7 @@ import StartScreenContainer from './components/StartScreen';
 
 function App() {
   return (
-    <div className="App">
+    <div className="container">
       <StartScreenContainer />
     </div>
   );

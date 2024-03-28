@@ -1,0 +1,9 @@
+.StartScreen__logo {
+  width: 50vw;
+}
+.StartScreen__container {
+  display: flex;
+  height: inherit;
+  align-items: center;
+  justify-content: center;
+}
