@@ -1,9 +1,6 @@
 import * as React from 'react';
+import StartScreen from './StartScreen';
 
-const StartScreen = () => {
-  return ( 
-    <div>Project started</div>
-   );
-}
- 
-export default StartScreen;
+const StartScreenContainer = () => <StartScreen />;
+
+export default StartScreenContainer;
