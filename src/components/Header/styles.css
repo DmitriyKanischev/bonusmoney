@@ -1,0 +1,13 @@
+.Header__container {
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+}
+.Header__text {
+  color: #2688eb;
+  margin: 4vw 0 4vw 0;
+  font-size: 10vw
+}
