@@ -1,0 +1,12 @@
+.Loader__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-top: 4vw;
+}
+.Loader__text {
+  font-size: 6vw;
+  color: #1a1a1a;
+  margin-top: 2vw;
+}
