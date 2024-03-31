@@ -1,5 +1,5 @@
-.Popup__container {
-  position: absolute;
+.Popup__overlay {
+  position: fixed;
   box-sizing: border-box;
   z-index: 2999;
   width: 100vw;
@@ -18,7 +18,8 @@
   justify-content: center;
   border-radius: 15px;
   flex-direction: column;
-  padding: 6vw 25vw;
+  padding: 6vw 10vw;
+  margin: 0 4vw;
 }
 .Popup__button {
   color: #fff;

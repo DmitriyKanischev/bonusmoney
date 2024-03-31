@@ -8,7 +8,7 @@ const className = 'Popup';
 
 const Popup:React.FC<IMessage> = observer( (props) => {
   return ( 
-    <div className={`${className}__container`}>
+    <div className={`${className}__overlay`}>
       <div className={`${className}__modal`}>
         <p
           style={{
