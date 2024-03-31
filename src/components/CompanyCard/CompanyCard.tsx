@@ -3,6 +3,7 @@ import './styles.css';
 import eyeIcon from '../../common/img/eye_white.png';
 import trashIcon from '../../common/img/trash_white.png';
 import { ICard } from '../../common/types/ICard';
+import CardStore from '../../store/CardStore';
 
 const className = 'CompanyCard';
 
@@ -88,7 +89,9 @@ const CompanyCard:React.FC<ICard> = (props) => {
       <div className={`${className}__buttonsContainer`}>
         <button 
           type='button'
+          name='Показать'
           className={`${className}__buttonIcon`}
+          onClick={() => CardStore.setMessage(props.company.companyId, 'Показать')}
           >
             <img 
               src={eyeIcon} alt="Eye Icon"
@@ -97,7 +100,10 @@ const CompanyCard:React.FC<ICard> = (props) => {
         </button>
         <button 
           type='button'
+          name='Удалить'
           className={`${className}__buttonIcon`}
+          onClick={() => CardStore.setMessage(props.company.companyId, 'Удалить')}
+
           >
             <img 
               src={trashIcon} alt="Trash Icon"
@@ -114,7 +120,8 @@ const CompanyCard:React.FC<ICard> = (props) => {
             cursor: 'pointer'
           }}
           type='button'
-          onClick={() => console.log('submit')}
+          name='Подробнее'
+          onClick={() => CardStore.setMessage(props.company.companyId, 'Подробнее')}
           >
             Подробнее
           </button>

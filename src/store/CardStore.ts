@@ -18,7 +18,10 @@ class CardStore {
   setModalState = () => {
     this.modalState = false
   };
-  
+  setMessage = (companyId: string, name: string) => {
+    this.message = `Нажата кнопка: ${name}, ид комании: ${companyId}`
+    this.modalState = true;
+  }
   fetchCards = async () => {
     let data = JSON.stringify({
       "offset": 0,
