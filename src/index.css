@@ -1,3 +1,15 @@
+@font-face {
+	font-family: 'Segoe UI';
+	src:	url('./common/fonts/SegoeUIRegular/SegoeUIRegular.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Segoe UI';
+	src:	url('./common/fonts/SegoeUIBold/SegoeUIBold.woff') format('woff');
+	font-weight: bold;
+	font-style: normal;
+}
 *,
 *::before,
 *::after {
@@ -31,9 +43,7 @@ body {
   margin: 0;
   height: 100%;
   line-height: 1;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Segoe UI';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
