@@ -12,16 +12,18 @@ const MainBlock = observer( () => {
     CardStore.fetchCards();
   },[]);
   return ( 
-    <div className={`${className}__container`}>
-      {!CardStore.cards && <LoaderContainer />}
-      {CardStore.cards && CardStore.cards.map((card) => 
-        <CompanyCard 
-          key={card.company.companyId}
-          company={card.company} 
-          customerMarkParameters={card.customerMarkParameters} 
-          mobileAppDashboard={card.mobileAppDashboard}/>
-      )}
-    </div>
+    <>
+      <div className={`${className}__container`}>
+        {!CardStore.cards.length && <LoaderContainer />}
+        {CardStore.cards && CardStore.cards.map((card) => 
+          <CompanyCard 
+            key={card.company.companyId}
+            company={card.company} 
+            customerMarkParameters={card.customerMarkParameters} 
+            mobileAppDashboard={card.mobileAppDashboard}/>
+        )}
+      </div>
+    </>
    );
 }
 );

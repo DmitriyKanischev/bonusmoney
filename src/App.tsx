@@ -1,17 +1,23 @@
 import React from 'react';
 import './App.css';
-import StartScreenContainer from './components/StartScreen';
 import HeaderContainer from './components/Header';
 import MainBlockContainer from './components/MainBlock';
+import PopupContainer from './components/Popup';
+import CardStore from './store/CardStore';
+import { observer } from 'mobx-react-lite';
 
-function App() {
+const App = observer( () => {
+  console.log(CardStore.modalState)
   return (
-    <div className="container">
-      {/* <StartScreenContainer /> */}
-      <HeaderContainer />
-      <MainBlockContainer />
-    </div>
+    <>
+      {CardStore.modalState && <PopupContainer message={CardStore.message} />}
+      <div className="container">
+        <HeaderContainer />
+        <MainBlockContainer />
+      </div>
+    </>
   );
 }
+)
 
 export default App;

@@ -48,6 +48,7 @@
   width: 8vw;
   object-fit: cover;
   mix-blend-mode: multiply;
+  cursor: pointer;
 }
 .red {
   -webkit-filter: invert(48%) sepia(13%) saturate(3207%) hue-rotate(315deg) brightness(95%) contrast(80%);

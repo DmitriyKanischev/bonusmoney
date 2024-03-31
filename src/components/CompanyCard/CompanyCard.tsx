@@ -110,9 +110,11 @@ const CompanyCard:React.FC<ICard> = (props) => {
             fontSize: '4vw',
             backgroundColor: `${props.mobileAppDashboard.backgroundColor}`,
             borderRadius: '15px',
-            padding: '4vw 8vw 4vw 8vw'
+            padding: '4vw 8vw 4vw 8vw',
+            cursor: 'pointer'
           }}
           type='button'
+          onClick={() => console.log('submit')}
           >
             Подробнее
           </button>

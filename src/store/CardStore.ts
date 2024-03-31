@@ -1,14 +1,24 @@
-import axios from "axios";
+import axios, { AxiosError } from "axios";
 import { makeAutoObservable } from "mobx";
 import { ICard } from "../common/types/ICard";
 
+interface IError {
+  type: string,
+  message: string
+}
+
 class CardStore {
   cards:ICard[] = [];
+  message: string = '';
+  modalState: boolean = false;
 
   constructor() {
     makeAutoObservable(this)
   }
-
+  setModalState = () => {
+    this.modalState = false
+  };
+  
   fetchCards = async () => {
     let data = JSON.stringify({
       "offset": 0,
@@ -25,19 +35,26 @@ class CardStore {
       },
       data : data
     };
-
-    const response = await axios.request(config);
     
-    if (response.status === 401) {
-      console.log(response.data.message);
-    };
-    if (response.status === 400) {
-      console.log(response.data.message);
-    };
-    if (response.status === 500) {
-      console.log('Всё упало');
-    };
-    this.cards = response.data.companies;
+    try {
+      const response = await axios.request(config);
+      this.cards = response.data.companies;
+    } catch (error) {
+      const e = error as AxiosError<IError>;     
+      if (e?.response?.status === 401) {
+        this.modalState = true;
+        this.message = 'Ошибка авторизации';
+      };
+      if (e?.response?.status === 400) {
+        this.modalState = true;
+        this.message = e.response?.data?.message;
+        console.log(e.response?.data?.message)
+      };
+      if (e?.response?.status === 500) {
+        this.modalState = true;
+        this.message = 'Всё упало';
+      };
+    }
   };
 }
 
