@@ -51,7 +51,6 @@ class CardStore {
       if (e?.response?.status === 400) {
         this.modalState = true;
         this.message = e.response?.data?.message;
-        console.log(e.response?.data?.message)
       };
       if (e?.response?.status === 500) {
         this.modalState = true;
