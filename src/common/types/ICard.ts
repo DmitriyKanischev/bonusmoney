@@ -1,4 +1,4 @@
-export interface ICards {
+export interface ICard {
   company: {
     companyId: string
 },

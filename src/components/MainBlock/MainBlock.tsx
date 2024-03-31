@@ -1,54 +1,29 @@
 import * as React from 'react';
 import './styles.css';
 import LoaderContainer from '../Loader';
-import axios from 'axios';
-import { ICards } from '../../common/types/ICards';
+import CardStore from '../../store/CardStore';
+import { observer } from 'mobx-react-lite';
+import CompanyCard from '../CompanyCard/CompanyCard';
 
 const className = 'MainBlock';
 
-const MainBlock = () => {
-  const [cards, setCards] = React.useState<ICards[]>();
-
-  const fetchCards = async () => {
-    let data = JSON.stringify({
-      "offset": 0,
-      "limit": 5
-    });
-
-    let config = {
-      method: 'post',
-      maxBodyLength: Infinity,
-      url: 'http://devapp.bonusmoney.pro/mobileapp/getAllCompaniesIdeal', //!  !  ! ---------getAllCompanies
-      headers: { 
-        'TOKEN': '123', 
-        'Content-Type': 'application/json'
-      },
-      data : data
-    };
-
-    const response = await axios.request(config);
-    
-    if (response.status === 401) {
-      console.log(response.data.message);
-    };
-    if (response.status === 400) {
-      console.log(response.data.message);
-    };
-    if (response.status === 500) {
-      console.log('Всё упало');
-    };
-    setCards(response.data);
-  };
-
+const MainBlock = observer( () => {
   React.useEffect(()=> {
-    fetchCards()
+    CardStore.fetchCards();
   },[]);
-  console.log(cards)
   return ( 
     <div className={`${className}__container`}>
-      {!cards?.length && <LoaderContainer />}
+      {!CardStore.cards && <LoaderContainer />}
+      {CardStore.cards && CardStore.cards.map((card) => 
+        <CompanyCard 
+          key={card.company.companyId}
+          company={card.company} 
+          customerMarkParameters={card.customerMarkParameters} 
+          mobileAppDashboard={card.mobileAppDashboard}/>
+      )}
     </div>
    );
 }
+);
  
 export default MainBlock;
