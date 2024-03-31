@@ -31,7 +31,7 @@ class CardStore {
     let config = {
       method: 'post',
       maxBodyLength: Infinity,
-      url: 'http://devapp.bonusmoney.pro/mobileapp/getAllCompaniesIdeal', //!  !  ! ---------getAllCompanies
+      url: 'http://devapp.bonusmoney.pro/mobileapp/getAllCompanies',
       headers: { 
         'TOKEN': '123', 
         'Content-Type': 'application/json'
