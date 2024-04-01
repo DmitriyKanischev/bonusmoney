@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/static/css/main.641b8f8e.css",
+    "main.js": "/static/js/main.1266f1c2.js",
+    "static/media/logo.png": "/static/media/logo.125a030b2480fc741e98.png",
+    "static/media/SegoeUIRegular.woff": "/static/media/SegoeUIRegular.23a4efdb51574a018374.woff",
+    "static/media/SegoeUIBold.woff": "/static/media/SegoeUIBold.3762bb6985d176cc5456.woff",
+    "index.html": "/index.html",
+    "main.641b8f8e.css.map": "/static/css/main.641b8f8e.css.map",
+    "main.1266f1c2.js.map": "/static/js/main.1266f1c2.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.641b8f8e.css",
+    "static/js/main.1266f1c2.js"
+  ]
+}
